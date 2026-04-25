@@ -1,53 +1,47 @@
-# Web Recon & Misconfiguration Analysis
+# Web Recon & Misconfiguration Case Study
 
-## 🔍 Overview
+## 🧠 Overview
+This project is a security research case study analyzing DNS misconfiguration and origin server exposure in a real-world web architecture.
 
-This project demonstrates practical web reconnaissance and analysis of DNS, CDN behavior, and server misconfigurations using tools like dig, curl, httpx, and nmap.
-
-The goal is to understand how modern web infrastructure works and how misconfigurations can expose origin servers.
+It demonstrates how improper CDN configuration can expose backend infrastructure.
 
 ---
 
-## 🧪 What I Tested
-
-- DNS resolution differences between apex and www domain
-- HTTP response behavior (redirects, status codes)
-- CDN protection behavior via :contentReference[oaicite:0]{index=0}
-- Origin server accessibility via direct IP access
-- Security filtering and blocking behavior
+## 🎯 Objective
+To understand:
+- DNS behavior differences (apex vs www)
+- CDN protection mechanisms
+- Origin server exposure risks
 
 ---
 
 ## 🛠️ Tools Used
-
-- dig (DNS analysis)
-- curl (HTTP requests)
-- httpx (web probing)
-- nmap (network scanning)
+- dig (DNS enumeration)
+- curl (HTTP analysis)
+- httpx (service probing)
 
 ---
 
-## 📊 Key Observations
+## 🔍 Key Finding
+A misconfiguration was observed where:
+- Subdomain traffic was routed through CDN
+- Root domain pointed directly to origin IP
 
-- `www` domain routed through Cloudflare
-- Root domain resolved to direct origin IP
-- HTTP 301 redirect from HTTP to HTTPS
-- Cloudflare blocked automated requests (403 responses)
-- Origin server remained directly accessible via IP
-
----
-
-## 📚 What I Learned
-
-- Difference between CDN-protected and direct-hosted architecture
-- DNS misconfigurations can expose origin servers
-- Importance of restricting origin access to CDN IP ranges
-- HTTP status codes in security analysis
-- Real-world web infrastructure behavior
+This creates a potential security bypass of CDN protection layer.
 
 ---
 
-## ⚠️ Disclaimer
+## 📄 Full Report
+See: `case-study/report.md`
 
-This project is for educational and ethical learning purposes only.
-No unauthorized testing was performed.
+---
+
+## ⚠️ Impact
+- Exposure of origin server IP
+- Bypass of CDN/WAF protection
+- Increased attack surface
+
+---
+
+## 📚 Disclaimer
+This project is for educational purposes only. No unauthorized testing was performed.
