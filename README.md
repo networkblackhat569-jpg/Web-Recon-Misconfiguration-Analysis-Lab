@@ -41,6 +41,26 @@ See: `case-study/report.md`
 - Bypass of CDN/WAF protection
 - Increased attack surface
 
+
+## Evidence
+
+### DNS Analysis
+![dig output](screenshots/dig-result.png)
+
+### HTTP Analysis
+![curl output](screenshots/curl-result.png)
+
+
+
+
+
+
+
+
+
+
+
+
 ---
 
 ## 📚 Disclaimer
